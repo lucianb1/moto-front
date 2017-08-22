@@ -10,7 +10,7 @@
                         <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                     </div>
                     sau
-                    <form class="form" ng-submit="vm.login()" novalidate id="login-form">
+                    <form class="form" ng-submit="vm.login()" novalidate id="login-form" style="color:grey;">
                         <div class="form-group">
                             <label class="sr-only">Email address</label>
                             <input name="email" type="email" ng-model="vm.email" class="form-control"
@@ -26,11 +26,12 @@
                             <div class="help-block text-right"><a href="">Ai uitat parola?</a></div>
                         </div>
                         <div class="form-group">
-                            <button  class="btn btn-primary btn-block">Login</button>
+                            <button class="btn btn-primary btn-block">Login</button>
                         </div>
-                        <label>
-                            <input ng-model="vm.rememberMe" type="checkbox"> Tine-ma minte
-                        </label>
+                        <div class="form-group">
+                            <input ng-model="vm.rememberMe" type="checkbox">
+                            <label>Tine-ma minte</label>
+                        </div>
                     </form>
                 </div>
                 <div class="bottom text-center">

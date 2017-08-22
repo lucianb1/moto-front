@@ -9,17 +9,17 @@
      * @copyright: Anitech Consulting Services Pvt Ltd.
      */
     angular.module('home', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'restangular']);
-    
+
     angular.module('home').config(function($stateProvider) {
 
-        $stateProvider.state('home-template', {
-            url: '/home',
+        $stateProvider.state('home', {
+            url: '/',
             templateUrl: 'home/templates/home-template.html',
             controller: 'homeController'
         });
         /* Add New States Above */
 
     });
-    
+
 
 })();

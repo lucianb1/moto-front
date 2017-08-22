@@ -22,6 +22,7 @@
                 vm.form.password.$setDirty();
                 vm.form.passwordConfirm.$setDirty();
             }
+        //    addItem.capabilities.$setValidity("youAreFat", false);
         };
 
         vm.isEmpty = function(text) {

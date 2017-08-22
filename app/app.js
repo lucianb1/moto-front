@@ -1,4 +1,4 @@
-(function(){
+(function () {
     'use strict';
 
     /**
@@ -14,33 +14,69 @@
             'ui.router',
             'ngAnimate',
             'ngMessages',
-            'angular-loading-bar',
             'ngCookies',
             'home',
             'auth',
             'common'
         ]);
 
-    mainModule.config(function($stateProvider, $urlRouterProvider) {
+    mainModule
+        .factory('httpClient', function ($http, serverConfig, $cookies) {
+            return function (config) {
+                return $http(updateConfig(config));
+            };
 
-        /* Add New States Above */
-        $urlRouterProvider.otherwise('/home');
+            function updateConfig(config) {
+                config.url = serverConfig.baseUrl + config.url;
 
-    });
-
-    mainModule.run(function($rootScope) {
-
-        $rootScope.safeApply = function(fn) {
-            var phase = $rootScope.$$phase;
-            if (phase === '$apply' || phase === '$digest') {
-                if (fn && (typeof(fn) === 'function')) {
-                    fn();
+                config.headers = config.headers || {};
+                if ($cookies.get('token')) {
+                    config.headers.Authorization = $cookies.get('token');
                 }
-            } else {
-                this.$apply(fn);
-            }
-        };
 
-    });
+                return config;
+            }
+        })
+        .config(function ($stateProvider, $urlRouterProvider) {
+
+            /* Add New States Above */
+            $urlRouterProvider.otherwise('/');
+
+            $stateProvider.state('confirm', {
+                url: '/confirm/:method?token',
+                templateUrl: 'common/confirm/confirmPage.html',
+                controller: 'confirmCtrl as vm'
+            });
+
+        })
+        .run(function ($rootScope) {
+
+            $rootScope.safeApply = function (fn) {
+                var phase = $rootScope.$$phase;
+                if (phase === '$apply' || phase === '$digest') {
+                    if (fn && (typeof(fn) === 'function')) {
+                        fn();
+                    }
+                } else {
+                    this.$apply(fn);
+                }
+            };
+
+        });
+
+    // function interceptor($cookies) {
+    //     return {
+    //         request: function (config) {
+    //             config.headers = config.headers || {};
+    //             if ($cookies.get('token')) {
+    //                 config.headers.Authorization = $cookies.get('token');
+    //             }
+    //             return config;
+    //         },
+    //         response: function (result) {
+    //             return result;
+    //         }
+    //     };
+    // }
 
 })();
