@@ -13,6 +13,7 @@
             'ui.utils',
             'ui.router',
             'ngAnimate',
+            'ngMessages',
             'angular-loading-bar',
             'ngCookies',
             'home',

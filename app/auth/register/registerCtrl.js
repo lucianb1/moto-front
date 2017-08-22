@@ -14,12 +14,19 @@
         vm.passwordConfirm = '';
 
         vm.register = function() {
-            authService.register(vm.email, vm.password);
+            console.log(vm.password, vm.email);
+            if (vm.form.$valid) {
+                authService.register(vm.email, vm.password);
+            } else {
+                vm.form.email.$setDirty();
+                vm.form.password.$setDirty();
+                vm.form.passwordConfirm.$setDirty();
+            }
         };
 
         vm.isEmpty = function(text) {
             return text === '';
-        }
+        };
 
 
 
