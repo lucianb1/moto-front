@@ -9,13 +9,18 @@
         $stateProvider
             .state('register', {
                 url: '/register',
-                templateUrl: 'auth/register/register.html',
+                templateUrl: 'auth/register/registerPage.html',
                 controller: 'registerCtrl as vm'
             })
             .state('forgotPassword', {
                 url: '/forgot-password',
                 templateUrl: 'auth/forgot-password/forgotPassword.html',
                 controller: 'forgotPasswordCtrl as vm'
+            })
+            .state('login', {
+                url: '/login',
+                templateUrl: 'auth/login/loginPage.html',
+                controller: 'loginCtrl as vm'
             })
         ;
 
@@ -27,7 +32,8 @@
             login: login,
             logout: logout,
             register: register,
-            authenticate: authenticate
+            authenticate: authenticate,
+            changePassword: changePassword
         };
 
         function login(email, password) {
@@ -44,6 +50,10 @@
 
         function authenticate(loginResponse) {
 
+        }
+
+        function changePassword(email, newPassword) {
+            console.log('changing password');
         }
 
     }]);

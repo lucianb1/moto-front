@@ -14,7 +14,6 @@
         vm.passwordConfirm = '';
 
         vm.register = function() {
-            console.log(vm.password, vm.email);
             if (vm.form.$valid) {
                 authService.register(vm.email, vm.password);
             } else {
