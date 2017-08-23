@@ -13,20 +13,21 @@
                 controller: 'registerCtrl as vm'
             })
             .state('forgotPassword', {
-                url: '/register/forgot-password',
-                templateUrl: 'auth/register/confirm/registerConfirm.html',
-                controller: 'registerConfirmCtrl as vm'
-            });
+                url: '/forgot-password',
+                templateUrl: 'auth/forgot-password/forgotPassword.html',
+                controller: 'forgotPasswordCtrl as vm'
+            })
+        ;
 
     });
 
     authModule.factory('authService', ['$http', '$cookies', function ($http, $cookies) {
 
-        var service = {
+        return {
             login: login,
             logout: logout,
             register: register,
-            confirmRegister: confirmRegister
+            authenticate: authenticate
         };
 
         function login(email, password) {
@@ -41,10 +42,9 @@
             console.log('registering...');
         }
 
-        function confirmRegister(token) {
-            console.log('confirm registration with token: ', token);
+        function authenticate(loginResponse) {
+
         }
 
-        return service;
     }]);
 })();
