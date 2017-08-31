@@ -26,26 +26,41 @@
 
     });
 
-    authModule.factory('authService', ['$http', '$cookies', function ($http, $cookies) {
+    authModule.factory('authService', ['httpClient', '$cookies', function (httpClient, $cookies) {
 
         return {
             login: login,
             logout: logout,
             register: register,
             authenticate: authenticate,
-            changePassword: changePassword
+            changePassword: changePassword,
+            confirmRegister: confirmRegister
         };
 
         function login(email, password) {
             console.log('login', email, password);
+            console.log('logout');
+            return httpClient({
+                url: '/login',
+                method: 'POST',
+                data: {email: email, password: password}
+            });
         }
 
         function logout() {
             console.log('logout');
+            return httpClient({
+                url: '/logout',
+                method: 'POST'
+            });
         }
 
         function register(email, password) {
-            console.log('registering...');
+            return httpClient({
+                url: '/registration',
+                method: 'POST',
+                data: {email: email, password: password}
+            });
         }
 
         function authenticate(loginResponse) {
@@ -54,6 +69,14 @@
 
         function changePassword(email, newPassword) {
             console.log('changing password');
+        }
+
+        function confirmRegister(token) {
+            return httpClient({
+                url: '/registration/confirm',
+                method: 'GET',
+                params: {token: token}
+            });
         }
 
     }]);

@@ -7,6 +7,10 @@
     <link href="app.less" type="text/css" rel="stylesheet/less"/>
 </head>
 <body>
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../bower_components/sweetalert2/dist/sweetalert2.min.css">
+
 
 <!-- Livereload script for development only (stripped during dist build) -->
 <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
@@ -25,7 +29,13 @@
 <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="../bower_components/angular-ui-utils/ui-utils.js"></script>
 <script src="../bower_components/restangular/dist/restangular.js"></script>
-<script src="/bower_components/angular-messages/angular-messages.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.js"></script>
+<script src="../bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
+<script src="../bower_components/angular-sweetalert/dist/ngSweetAlert2.min.js"></script>
+<script type="text/javascript">
+    var ngSweetAlert2 = window.ngSweetAlert2;
+    console.log(ngSweetAlert2);
+</script>
 <!-- Add New Bower Component JS Above -->
 
 <!-- Main App JS -->

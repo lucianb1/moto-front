@@ -8,7 +8,7 @@
      * @author: Tapas Jena
      * @copyright: Anitech Consulting Services Pvt Ltd.
      */
-    var mainModule = angular.module('moto',
+    angular.module('moto',
         ['ui.bootstrap',
             'ui.utils',
             'ui.router',
@@ -17,10 +17,9 @@
             'ngCookies',
             'home',
             'auth',
-            'common'
-        ]);
-
-    mainModule
+            'common',
+            'angular-sweetalert'
+        ])
         .factory('httpClient', function ($http, serverConfig, $cookies) {
             return function (config) {
                 return $http(updateConfig(config));

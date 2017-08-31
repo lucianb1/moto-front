@@ -23,6 +23,7 @@
     "moment": "~2.5",
     "less.js": "~1.7.5",
     "font-awesome": "~4.2.0",
-    "angular-loading-bar": "~0.6.0"
+    "sweetalert2": "^6.6.9",
+    "angular-sweetalert": "angular-h-sweetalert#^2.0.1"
   }
 }

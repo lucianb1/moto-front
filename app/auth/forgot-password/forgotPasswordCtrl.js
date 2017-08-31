@@ -14,7 +14,7 @@
                 vm.form.password.$setDirty();
             }
 
-        }
+        };
 
 
     });
