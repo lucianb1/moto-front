@@ -1,6 +1,0 @@
-input.ng-invalid.ng-dirty{
-    border: 1px solid red;
-}
-input.ng-dirty.ng-valid {
-    background: url("https://cdn.pixabay.com/photo/2014/04/02/11/01/tick-305245_960_720.png") right top / contain no-repeat
-}

@@ -8,7 +8,7 @@
      * @author: Tapas Jena
      * @copyright: Anitech Consulting Services Pvt Ltd.
      */
-    angular.module('home', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'restangular']);
+    angular.module('home', ['ui.utils', 'ui.router', 'ngAnimate', 'restangular']);
 
     angular.module('home').config(function($stateProvider) {
 

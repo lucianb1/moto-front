@@ -9,8 +9,7 @@
      * @copyright: Anitech Consulting Services Pvt Ltd.
      */
     angular.module('moto',
-        ['ui.bootstrap',
-            'ui.utils',
+        ['ui.utils',
             'ui.router',
             'ngAnimate',
             'ngMessages',
@@ -20,7 +19,10 @@
             'common',
             'angular-sweetalert'
         ])
-        .factory('httpClient', function ($http, serverConfig, $cookies) {
+            .config(['$qProvider', function ($qProvider) {
+                $qProvider.errorOnUnhandledRejections(false);
+            }])
+            .factory('httpClient', function ($http, serverConfig, $cookies) {
             return function (config) {
                 return $http(updateConfig(config));
             };
@@ -61,6 +63,11 @@
                 }
             };
 
+        })
+        .component('fixedHeader', {
+            templateUrl: 'common/header/headerTemplate.html',
+            controller: 'headerCtrl',
+            controllerAs: 'vm'
         });
 
     // function interceptor($cookies) {

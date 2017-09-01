@@ -23,9 +23,9 @@
                     return modelValue === scope.otherModelValue;
                 };
 
-                // scope.$watch("otherModelValue", function () {
-                //     ngModel.$validate();
-                // });
+                scope.$watch("otherModelValue", function () {
+                    ngModel.$validate();
+                });
             }
         };
 

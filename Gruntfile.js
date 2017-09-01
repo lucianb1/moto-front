@@ -53,7 +53,7 @@ module.exports = function (grunt) {
             livereloadOnError: false,
             spawn: false
         },
-        files: [createFolderGlobs(['*.js','*.less','*.html']),'!_SpecRunner.html','!.grunt'],
+        files: [createFolderGlobs(['*.js','*.html']),'!_SpecRunner.html','!.grunt'],
         tasks: [] //all the tasks are run dynamically during the watch event handler
       }
     },
@@ -71,15 +71,6 @@ module.exports = function (grunt) {
       },
       after: {
         src:['temp']
-      }
-    },
-    less: {
-      production: {
-        options: {
-        },
-        files: {
-          'temp/app.css': 'app/app.less'
-        }
       }
     },
     ngtemplates: {
@@ -210,7 +201,7 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.registerTask('build', ['jshint', 'clean:before', 'less', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy', 'htmlmin', 'clean:after']);
+  grunt.registerTask('build', ['jshint', 'clean:before', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy', 'htmlmin', 'clean:after']);
   grunt.registerTask('run', ['dom_munger:read', 'jshint', 'connect', 'watch']);
   grunt.registerTask('test', ['dom_munger:read', 'karma']);
   grunt.registerTask('e2e', ['dom_munger:read', 'protractor']);

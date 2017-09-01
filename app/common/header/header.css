@@ -1,0 +1,22 @@
+.fixed-header {
+    position: fixed;
+    height: 60px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: lightblue;
+}
+
+.fixed-header ul {
+    list-style: none;
+}
+
+.fixed-header ul li {
+    float: left;
+    display: inline;
+    padding-right: 20px;
+}
+
+.fixed-header #new-advert {
+    float:right;
+}

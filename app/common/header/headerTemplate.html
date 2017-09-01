@@ -1,0 +1,9 @@
+<div class="fixed-header">
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Motociclete</a></li>
+        <li><a ui-sref="home-template">Accesorii</a></li>
+        <li ng-if="!vm.isLoggedIn"><a ui-sref="login">Contul meu</a></li>
+        <li ng-if="vm.isLoggedIn"><a ui-sref="login">{{vm.userEmail}}</a></li>
+        <li id="new-advert"><input type="button" class="btn" value="Adauga anunt"></li>
+    </ul>
+</div>

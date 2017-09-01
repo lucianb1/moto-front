@@ -8,13 +8,13 @@
      * @author: Tapas Jena
      * @copyright: Anitech Consulting Services Pvt Ltd.
      */
-    angular.module('common', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'restangular']);
-    
+    angular.module('common', ['ui.utils', 'ui.router', 'ngAnimate', 'restangular']);
+
     angular.module('common').config(function($stateProvider) {
 
         /* Add New States Above */
 
     });
-    
+
 
 })();

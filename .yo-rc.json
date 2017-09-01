@@ -12,12 +12,6 @@
         "file": "app/index.html",
         "marker": "<!-- Add New Component JS Above -->",
         "template": "<script src=\"<%= filename %>\"></script>"
-      },
-      "less": {
-        "relativeToModule": true,
-        "file": "<%= module %>.less",
-        "marker": "/* Add Component LESS Above */",
-        "template": "@import \"<%= filename %>\";"
       }
     },
     "modules": [

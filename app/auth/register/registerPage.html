@@ -1,25 +1,22 @@
-<div class="col-md-6 col-md-offset-3">
+<div class="page-content">
     <h2>Register</h2>
-    <form class="form" name="vm.form" novalidate id="register-form" ng-submit="vm.register()">
+    <form class="login-form" name="vm.form" novalidate id="register-form" ng-submit="vm.register()">
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="form-control" ng-model="vm.email" required ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/"/>
+            <input placeholder="Email *" type="email" name="email" id="email" class="inputx" ng-model="vm.email" required ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/"/>
             <div class="error validationerror" ng-messages="vm.form.email.$error">
                 <p ng-message="pattern">Email invalid</p>
                 <p ng-if="vm.form.email.$dirty" ng-message="required">Email-ul trebuie specificat</p>
             </div>
         </div>
         <div class="form-group">
-            <label for="password">Parola</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" required valid-password/>
+            <input placeholder="Parola *" type="password" name="password" id="password" ng-model="vm.password" required valid-password/>
             <div class="error validationerror" ng-messages="vm.form.password.$error">
                 <p ng-message="validPassword">Parola trebuie sa contina cel putin 6 caractere</p>
                 <p ng-if="vm.form.password.$dirty" ng-message="required">Parola trebuie specificata</p>
             </div>
         </div>
         <div class="form-group">
-            <label>Confirmare parola</label>
-            <input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control" ng-model="vm.passwordConfirm" confirm-password="vm.password" required/>
+            <input placeholder="Confirma parola *" type="password" name="passwordConfirm" id="passwordConfirm" ng-model="vm.passwordConfirm" confirm-password="vm.password" required/>
             <div class="error validationerror" ng-messages="vm.form.passwordConfirm.$error">
                 <p ng-message="psCompareTo">Parola nu coincide</p>
                 <p ng-if="vm.form.passwordConfirm.$dirty" ng-message="required">Va rugam confirmati parola</p>
@@ -27,7 +24,7 @@
 
         </div>
         <div class="form-actions">
-            <button class="btn btn-primary btn-block">Register</button>
+            <button class="btn btn-block green-btn">Register</button>
         </div>
     </form>
 </div>
